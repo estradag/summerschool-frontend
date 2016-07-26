@@ -9,7 +9,7 @@
     "main-store": "git checkout -f && git clean -f && git checkout master",
     "add-feature": "git checkout -f && git clean -f && git checkout add-feature",
     "fix-feature": "git checkout -f && git clean -f && git checkout fix-feature",
-    "build": "babel-node tools/build.js && open:dist",
+    "build": "babel-node tools/build.js && npm run open:dist",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "lint:watch": "npm run lint -- --watch",
     "lint": "esw webpack.config.* src tools --color",
