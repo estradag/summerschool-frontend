@@ -6,22 +6,6 @@
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/react)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
-##Clone submodules
-
-The `--recursive` flag should do all the work if you used it while cloning this
-repo. If not, try this:
-
-`git submodule update --init --recursive`
-
-That will clone all the necessary submodules.
-
-If things don't go the way you were expecting, check if you've done this
-already:
-
-`git submodule update --recursive`
-
-That will update the submodules to make sure you're using the most recent HEAD
-
 ##Initial Machine Setup
  1. **Install [Node 4.0.0 or greater](https://nodejs.org)** - (5.0 or greater is recommended for optimal build performance). Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
  2. **Install [Git](https://git-scm.com/downloads)**. 
