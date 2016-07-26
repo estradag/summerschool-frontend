@@ -35,7 +35,7 @@ const Checkout = ( {productsAppState, cartAppState, deleteCartItem, setOrder} ) 
 	const PrintBtnProceedToBuy = 
     (cartAppState.get("cart").size > 0) ?
 			<div className="produced">
-				<Link className="hvr-skew-backward">
+				<Link to="/orderSummary" onClick={handleProceedToBuyClick} className="hvr-skew-backward">
 					Proceed To Buy</Link>
 			</div> : "";
   return (

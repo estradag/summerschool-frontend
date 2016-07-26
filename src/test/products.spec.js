@@ -48,6 +48,7 @@ describe('reducer', () => {
             "description": "A product from Acme's catalog",
             "price": 19.99,
 						"category": "Men",
+            "feature": true,
             "image": "http://localhost/somestuff.jpg"
           },
           {
@@ -56,6 +57,7 @@ describe('reducer', () => {
             "description": "A product from Acme's catalog",
             "price": 19.99,
 						"category": "Women",
+            "feature": false,
             "image": "http://localhost/somestuff.jpg"
           },
           {
@@ -64,6 +66,7 @@ describe('reducer', () => {
             "description": "A product from Acme's catalog",
             "price": 19.99,
 						"category": "Men",
+            "feature": true,
             "image": "http://localhost/somestuff.jpg"
           }
         ]

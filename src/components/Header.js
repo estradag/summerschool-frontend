@@ -41,7 +41,7 @@ const Header = ( {cartAppState, userAppState} ) => {
                   <li><Link className="color" to={'/'}>Home</Link></li>
                   <li><Link className="color" to={'/women'}>Women</Link></li>
                   <li><Link className="color" to={'/men'}>Men</Link></li>
-                  <li><Link className="color" to={'/feature'}>feture</Link></li>
+                  <li><Link className="color" to={'/feature'}>Feature</Link></li>
                 </ul>
               </div>
             </nav>
@@ -56,7 +56,7 @@ const Header = ( {cartAppState, userAppState} ) => {
                           value.get("price")
                         ).toJS().reduce(function(previousValue, currentValue) {
                           return previousValue + currentValue;
-                        }):0
+                        }).toFixed(2):0
                       }
                     </span> 
                   </div>

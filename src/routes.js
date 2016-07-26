@@ -19,6 +19,6 @@ export default (
     <Route
       path="/men" />
     <Route
-      path="/fetures" />
+      path="/feature" />
   </Route>
 ); // fix typo in path for features

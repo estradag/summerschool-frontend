@@ -13,7 +13,7 @@ import OrderSummary from '../components/OrderSummary';
 export class MainStore extends Component {
   render() {
   const MainPageContent =
-      location.pathname == "/" || location.pathname == "/women" || location.pathname == "/men" || location.pathname == "/feture" ?
+      location.pathname == "/" || location.pathname == "/women" || location.pathname == "/men" || location.pathname == "/feature" ?
         <Content
         productsAppState={this.props.productsAppState}
         cartAppState={this.props.cartAppState}
