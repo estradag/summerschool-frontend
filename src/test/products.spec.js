@@ -13,6 +13,8 @@ describe('reducer', () => {
             "title": "Product",
             "description": "A product from Acme's catalog",
             "price": 19.99,
+						"category": "Men",
+            "feature": true,
             "image": "http://localhost/somestuff.jpg"
           },
           {
@@ -20,6 +22,8 @@ describe('reducer', () => {
             "title": "Product",
             "description": "A product from Acme's catalog",
             "price": 19.99,
+						"category": "Women",
+            "feature": false,
             "image": "http://localhost/somestuff.jpg"
           },
           {
@@ -27,6 +31,8 @@ describe('reducer', () => {
             "title": "Product",
             "description": "A product from Acme's catalog",
             "price": 19.99,
+						"category": "Men",
+            "feature": true,
             "image": "http://localhost/somestuff.jpg"
           }
         ]
@@ -41,6 +47,7 @@ describe('reducer', () => {
             "title": "Product",
             "description": "A product from Acme's catalog",
             "price": 19.99,
+						"category": "Men",
             "image": "http://localhost/somestuff.jpg"
           },
           {
@@ -48,6 +55,7 @@ describe('reducer', () => {
             "title": "Product",
             "description": "A product from Acme's catalog",
             "price": 19.99,
+						"category": "Women",
             "image": "http://localhost/somestuff.jpg"
           },
           {
@@ -55,6 +63,7 @@ describe('reducer', () => {
             "title": "Product",
             "description": "A product from Acme's catalog",
             "price": 19.99,
+						"category": "Men",
             "image": "http://localhost/somestuff.jpg"
           }
         ]

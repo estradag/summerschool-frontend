@@ -16,6 +16,7 @@ describe('reducer', () => {
 						"description": "Chiffon Blouse U Neck",
 						"price": 89.99,
 						"category": "Women",
+						"feature": true,
 						"image": "images/pc1.jpg"
 					},
 					{
@@ -24,6 +25,7 @@ describe('reducer', () => {
 						"description": "Slim Fit",
 						"price": 76.99,
 						"category": "Men",
+						"feature": false,
 						"image": "images/pc4.jpg"
 					}
 				]
@@ -38,6 +40,7 @@ describe('reducer', () => {
 				"description": "Chiffon Blouse U Neck",
 				"price": 89.99,
 				"category": "Women",
+				"feature": true,
 				"image": "images/pc1.jpg"
       },
       {
@@ -46,6 +49,7 @@ describe('reducer', () => {
 				"description": "Slim Fit",
 				"price": 76.99,
 				"category": "Men",
+				"feature": false,
 				"image": "images/pc4.jpg"
       }]
     }));

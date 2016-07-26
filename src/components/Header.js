@@ -41,6 +41,7 @@ const Header = ( {cartAppState, userAppState} ) => {
                   <li><Link className="color" to={'/'}>Home</Link></li>
                   <li><Link className="color" to={'/women'}>Women</Link></li>
                   <li><Link className="color" to={'/men'}>Men</Link></li>
+                  <li><Link className="color" to={'/feature'}>feture</Link></li>
                 </ul>
               </div>
             </nav>
@@ -50,11 +51,14 @@ const Header = ( {cartAppState, userAppState} ) => {
               <Link to={'/checkout'}>Checkout
                 <h3>
                   <div className="total">
-                    <span className="simpleCart_total">${cartAppState.get("cart") && cartAppState.get("cart").size > 0 ? cartAppState.get("cart").map((value, index) =>
-                      value.get("price")
-                    ).toJS().reduce(function(previousValue, currentValue) {
-                      return previousValue + currentValue;
-                    }).toFixed(2):0}</span>
+                    <span className="simpleCart_total">
+                        ${cartAppState.get("cart") && cartAppState.get("cart").size > 0 ? cartAppState.get("cart").map((value, index) =>
+                          value.get("price")
+                        ).toJS().reduce(function(previousValue, currentValue) {
+                          return previousValue + currentValue;
+                        }):0
+                      }
+                    </span> 
                   </div>
                   <img src={require("../images/cart.png")} alt=""/>
                 </h3>
