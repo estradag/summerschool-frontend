@@ -15,12 +15,12 @@ const Content = ( {productsAppState, cartAppState, userAppState, orderAppState, 
   
   const handleProductItemClick = (e) => {
     setCartItem(fromJS({
-      cart_items: cartAppState.get("cart")? cartAppState.get("cart").map((value, index) =>
-        value
-      ).toJS() : [],
+      cart_items: cartAppState.get("cart")? cartAppState.get("cart") : [],
       cart_item: productsAppState.get("products").filter(value => 
         value.get('id') == parseInt(e.target.id)
-      ).first().toJS()
+      ).map((value, index) =>
+        value
+      )
     }));
   };
   

@@ -8,15 +8,10 @@ export default function cart(state = initialState, action) {
     case types.SET_CART_ITEM:
     {
       return state.set(
-        'cart', 
-        action.value.get('cart_items').toSet().union(
-          fromJS([{
-            id: action.value.get('cart_item').get('id'), 
-            title: action.value.get('cart_item').get('title'), description:action.value.get('cart_item').get('description'),
-            price:action.value.get('cart_item').get('price'),
-            category:action.value.get('cart_item').get('category'),
-            image:action.value.get('cart_item').get('image')
-          }]).toSet()).toList());
+       'cart', 
+       action.value.get('cart_items').toSet().union(action.value.get('cart_item').map((value, index) =>
+         value
+       )).toList());
     }
     case types.DELETE_CART_ITEM:
     {
