@@ -1,23 +1,23 @@
 import React, {PropTypes} from 'react';
 
-const ProductItem = ( props ) => {
+const ProductItem = ( {handleClick, identifier, title, category, description, price, image} ) => {
   return (
-      <div key={props.identifier} className="col-md-3 item-grid simpleCart_shelfItem">
+      <div key={identifier} className="col-md-3 item-grid simpleCart_shelfItem">
         <div className="mid-pop">
           <div className="pro-img">
-            <img src={require("../images/"+props.image)} className="img-responsive" alt={props.title}/>
+            <img src={require("../images/"+image)} className="img-responsive" alt={title}/>
           </div>
           <div className="mid-1">
             <div className="women">
               <div className="women-top">
-                <span>{props.category}</span>
-                <h6><a href="javascript:void(0)">{props.title}</a></h6>
+                <span>{category}</span>
+                <h6><a href="javascript:void(0)">{title}</a></h6>
               </div>
               <div className="img item_add">
                 <a href="javascript:void(0)">
                   <img 
-                    onClick={props.handleClick}
-                    id={props.identifier}
+                    onClick={handleClick}
+                    id={identifier}
                     src={require("../images/ca.png")}
                     alt="add to cart" />
                 </a>
@@ -25,7 +25,7 @@ const ProductItem = ( props ) => {
               <div className="clearfix"></div>
             </div>
             <div className="mid-2">
-              <p><em className="item_price">$ {props.price}</em></p>
+              <p><em className="item_price">$ {price}</em></p>
               <div className="clearfix"></div>
             </div>
           </div>

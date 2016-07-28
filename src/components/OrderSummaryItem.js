@@ -1,23 +1,23 @@
 import React, {PropTypes} from 'react';
 
-const OrderSummaryItem = ( props ) => {
+const OrderSummaryItem = ( {identifier, title, category, description, price, image} ) => {
   return (
-		<tr key={props.identifier} className="cart-header">
+		<tr key={identifier} className="cart-header">
 			<td className="ring-in">
 				<a href="single.html" className="at-in">
-					<img src={require("../images/"+props.image)} className="img-responsive" alt={props.title} />
+					<img src={require("../images/"+image)} className="img-responsive" alt={title} />
 				</a>
 				<div className="sed">
 					<h5>
-						<a href="javascript:void(0)">{props.title}</a>
+						<a href="javascript:void(0)">{title}</a>
 					</h5>
-					<p>{props.category}</p>
+					<p>{category}</p>
 				</div>
 				<div className="clearfix"> </div>
 			</td>
-			<td>$ {props.price}</td>
+			<td>$ {price}</td>
 			<td>FREE SHIPPING</td>
-			<td className="item_price">$ {props.price}</td>
+			<td className="item_price">$ {price}</td>
 		</tr>
   );
 };
