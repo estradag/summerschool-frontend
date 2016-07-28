@@ -20,7 +20,6 @@ describe('reducer', () => {
 									"description": "Chiffon Blouse U Neck",
 									"price": 89.99,
 									"category": "Women",
-									"feature": true,
 									"image": "images/pc1.jpg"
 								},
 								{
@@ -29,7 +28,6 @@ describe('reducer', () => {
 									"description": "Slim Fit",
 									"price": 76.99,
 									"category": "Men",
-									"feature": false,
 									"image": "images/pc4.jpg"
 								}
 							]
@@ -46,7 +44,6 @@ describe('reducer', () => {
 				"description": "Chiffon Blouse U Neck",
 				"price": 89.99,
 				"category": "Women",
-				"feature": true,
 				"image": "images/pc1.jpg"
       },
       {
@@ -55,7 +52,6 @@ describe('reducer', () => {
 				"description": "Slim Fit",
 				"price": 76.99,
 				"category": "Men",
-				"feature": false,
 				"image": "images/pc4.jpg"
       }]
     }));
@@ -67,14 +63,14 @@ describe('reducer', () => {
       type: 'SET_CART_ITEM',
       value: fromJS({
         cart_items: [],
-        cart_item: {
+        cart_item: [{
           id: 1, 
           title: "Luna Flower", 
           description: "Collared Neck Stylish",
           price: 60.92,
           category: "Men",
           image: "images/product.jpg"
-        }
+        }]
       })
     };
     const nextState = cart(initialState, action);
@@ -104,14 +100,14 @@ describe('reducer', () => {
           category: "Men",
           image: "images/product.jpg"
         }],
-        cart_item: {
+        cart_item: [{
           id: 2, 
           title: "Dearlovers", 
           description: "Chiffon Blouse U Neck",
           price: 89.99,
           category: "Women",
           image: "images/product2.jpg"
-        }
+        }]
       })
     };
     const nextState = cart(initialState, action);
