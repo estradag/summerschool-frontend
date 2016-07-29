@@ -123,11 +123,30 @@ Clues:
 1. Check [Span Tag](http://www.w3schools.com/tags/tag_span.asp) specification.
 2. Check [Img Tag](http://www.w3schools.com/tags/tag_img.asp) specification.
 3. Check [Nesting Tags](http://www.bu.edu/tech/services/comm/websites/www/non-wordpress/start/html-introduction/syntax/nesting-tags/) post.
-4. Save the tags in `PrintFeatureItem` const and print it in the return.
-4. Remember validate that show feature image only for products that have feature true.
-5. Add `propType` for feature prop.
-6. Print the value after the `tag` with `className mid-pop` 
-7. Verify the correct render of the change.
+4. Save the tags in `PrintFeatureItem` const before the return.
+5. Add `span` tag with `className` equals to `feature-product`
+6. Nest to `span` an `img` with `src` equal to `{require("../images/featured_product.png")}`
+5. Remember validate that show feature image only for products that have `feature equal to true`.
+6. Add `propType` for feature prop.
+7. Print the value after the `tag` with `className mid-pop` 
+8. Verify the correct render of the change.
+
+Const definition example:
+
+```
+const Variable =
+      <span>
+        <img src="image-path" alt="alt-title"/>
+      </span> : "";
+```
+
+If condition assignment example:
+
+```
+const Variable =
+  (condition)?
+    <p>True</p> : <p>False</p>;
+```
 
 ### 4. Add feature product styles.
 
