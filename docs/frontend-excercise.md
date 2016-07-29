@@ -255,7 +255,7 @@ Clues:
 
 1. Check [Expect equal](http://chaijs.com/api/bdd/#method_equal).
 
-### 11. Update Order tests.
+### 8. Update Order tests.
 
 Files route:
 
@@ -271,7 +271,7 @@ Clues:
 
 1. Check [Expect equal](http://chaijs.com/api/bdd/#method_equal).
 
-### 12.Update Products tests.
+### 9.Update Products tests.
 
 Files route:
 
