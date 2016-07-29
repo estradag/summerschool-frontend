@@ -67,11 +67,21 @@ We need to implement the following ranked User Stories.
   2. Change `localhost` with the `summerschool.cart public ip`.
 6. Save the file.
 7. Verify that all test pass running `npm run test`.
+<<<<<<< HEAD
 8. Use Postman to check the following endpoints. Remember set the header with key: `authorization` value: `Bearer qphYSqjEFk1RcFxYqqIIFk4vaBJvDoBr3t9aHTp1JFEAO0NS7ECyLJJyUPybOUNf`
   1. http://SERVICE-PUBLIC-IP-ADDRESS:3100/api/v1/products
   2. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/cart/1 
   3. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/users/1
 9. Run `npm run build`.
+=======
+8. Use Postman to check the following endpoints. Remember set the header key: authorization value: Bearer qphYSqjEFk1RcFxYqqIIFk4vaBJvDoBr3t9aHTp1JFEAO0NS7ECyLJJyUPybOUNf
+  1. http://SERVICE-PUBLIC-IP-ADDRESS:3100/api/v1/products
+  2. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/cart/1 
+  3. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/users/1
+7. Run `npm run build`.
+
+Aqui hicieron un deploy manual al nuevo server.
+>>>>>>> ab543d6a1eea1c638a566abdd82e64d5484daeb2
 
 ## Tasks
 
@@ -81,6 +91,7 @@ Files route:
 
 1. In `summerschool-items-api` repository.
 2. Navigate to the folder /api and open `products.apib` in Atom editor.
+<<<<<<< HEAD
 3. Find the Body response.
 4. Add `feature: true` for products with `id` 1, 4, 7 and `feature: false` for the rest. 
 
@@ -103,6 +114,17 @@ Clues:
 
 1. Use spaces for indentation.
 2. More info [APIBluePrint](https://apiblueprint.org/documentation/specification.html) specification.
+=======
+
+Add `feature true` for each product with `id 1, 4, 7` and `false` for the rest.
+
+Clues:
+
+1. Check [APIBluePrint](https://apiblueprint.org/documentation/specification.html) specification.
+1. Respect identation.
+2. Restart the service after do any change.
+2. Remember verify the response making a call to this endpoint.
+>>>>>>> ab543d6a1eea1c638a566abdd82e64d5484daeb2
 
 ### 2. Modify Cart API
 
@@ -113,6 +135,7 @@ Files route:
 3. Find the Body response.
 4. Add `feature: true` for products with `id` 2 and `feature: false` for the rest. 
 
+<<<<<<< HEAD
 example:
 
 ```
@@ -127,6 +150,9 @@ example:
 
 5. Save the file and start the service running `npm run api-server`.
 6. Use Postman to verify `HOST/api/v1/cart/1` endpoint.
+=======
+Add `feature true` for each product with `id 2` and `false` for the rest.
+>>>>>>> ab543d6a1eea1c638a566abdd82e64d5484daeb2
 
 Clues:
 
@@ -144,7 +170,41 @@ Files route:
   1. `span` tag with `className` equals to `feature-product`
   2. Nest `img` to `span` with `src` equal to `{require("../images/featured_product.png")}`
 
+<<<<<<< HEAD
 Const definition:
+=======
+Add the feature image to Products in main page.
+
+Clues:
+
+1. Check [Span Tag](http://www.w3schools.com/tags/tag_span.asp) specification.
+2. Check [Img Tag](http://www.w3schools.com/tags/tag_img.asp) specification.
+3. Check [Nesting Tags](http://www.bu.edu/tech/services/comm/websites/www/non-wordpress/start/html-introduction/syntax/nesting-tags/) post.
+4. Save the tags in `PrintFeatureItem` const before the return.
+5. Add `span` tag with `className` equals to `feature-product`
+6. Nest to `span` an `img` with `src` equal to `{require("../images/featured_product.png")}`
+5. Remember validate that show feature image only for products that have `feature equal to true`.
+6. Add `propType` for feature prop.
+7. Print the value after the `tag` with `className mid-pop` 
+8. Verify the correct render of the change.
+
+Const definition example:
+
+```
+const Variable =
+      <span>
+        <img src="image-path" alt="alt-title"/>
+      </span> : "";
+```
+
+If condition assignment example:
+
+```
+const Variable =
+  (condition)?
+    <p>True</p> : <p>False</p>;
+```
+>>>>>>> ab543d6a1eea1c638a566abdd82e64d5484daeb2
 
 ```
 const Variable =
