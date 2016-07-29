@@ -36,7 +36,13 @@
 
 We need to implement a new feature, the singer Katy Perry will promote some of our products. The Product Owner ask us to implement this new feature, he said that "Clients needs to identify which products are promoted by Katy Perry".
 
-So, time to rocks.
+So, time to rock!.
+
+## Requirements
+
+1. [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+2. [Google Chrome](https://www.google.com/chrome/)
+3. [Atom Editor](https://atom.io/)
 
 ## Instructions
 
@@ -48,7 +54,7 @@ We need to implement the following ranked User Stories.
 
 ## First al all - configure the ip of your APIs
 
-1. In `summerschool-items-api` repository.
+1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/middleware` and open `sagas.js` in Atom editor.
 3. For `summerschool.users`:
   1. Find `yield call` in `doRequestUser` function.
@@ -60,7 +66,14 @@ We need to implement the following ranked User Stories.
   1. Find `yield call` in `doRequestCart `function.
   2. Change localhost with the `summerschool.cart` public ip.
 6. Save the file.
-7. Verify running `npm run build`.
+7. Verify that all test pass running `npm run test`.
+8. Use Postman to check the following endpoints. Remember set the header key: authorization value: Bearer qphYSqjEFk1RcFxYqqIIFk4vaBJvDoBr3t9aHTp1JFEAO0NS7ECyLJJyUPybOUNf
+  1. http://SERVICE-PUBLIC-IP-ADDRESS:3100/api/v1/products
+  2. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/cart/1 
+  3. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/users/1
+7. Run `npm run build`.
+
+Aqui hicieron un deploy manual al nuevo server.
 
 ## Tasks
 
@@ -69,14 +82,14 @@ We need to implement the following ranked User Stories.
 Files route:
 
 1. In `summerschool-items-api` repository.
-2. Navigate to the folder /api and open products.apib in Atom editor.
+2. Navigate to the folder /api and open `products.apib` in Atom editor.
 
-Add `feature true` for each product with `id 1, 4, 7` and false for the rest.
+Add `feature true` for each product with `id 1, 4, 7` and `false` for the rest.
 
 Clues:
 
 1. Check [APIBluePrint](https://apiblueprint.org/documentation/specification.html) specification.
-1. Modify the proper repository.
+1. Respect identation.
 2. Restart the service after do any change.
 2. Remember verify the response making a call to this endpoint.
 
@@ -87,7 +100,7 @@ Files route:
 1. In `summerschool-cart-api` repository.
 2. Navigate to the folder `/api` and open `cart.apib` in Atom editor.
 
-Add `feature true` for each product with `id 2` and false for the rest.
+Add `feature true` for each product with `id 2` and `false` for the rest.
 
 Clues:
 
@@ -110,10 +123,11 @@ Clues:
 1. Check [Span Tag](http://www.w3schools.com/tags/tag_span.asp) specification.
 2. Check [Img Tag](http://www.w3schools.com/tags/tag_img.asp) specification.
 3. Check [Nesting Tags](http://www.bu.edu/tech/services/comm/websites/www/non-wordpress/start/html-introduction/syntax/nesting-tags/) post.
-4. Save the tags in a const and print it in the return.
+4. Save the tags in `PrintFeatureItem` const and print it in the return.
 4. Remember validate that show feature image only for products that have feature true.
-5. Add propType for feature prop.
-6. Verify the correct render of the change.
+5. Add `propType` for feature prop.
+6. Print the value after the `tag` with `className mid-pop` 
+7. Verify the correct render of the change.
 
 ### 4. Add feature product styles.
 
