@@ -46,6 +46,22 @@ We need to implement the following ranked User Stories.
 2. As a Owner I need to feature some product.
 3. As a Client I need to have a top menu to access all feature products.
 
+## First al all - configure the ip of your APIs
+
+1. In `summerschool-items-api` repository.
+2. Navigate to the folder `/middleware` and open `sagas.js` in Atom editor.
+3. For `summerschool.users`:
+  1. Find `yield call` in `doRequestUser` function.
+  2. Change localhost with the `summerschool.users` public ip.
+4. For `summerschool.items`:
+  1. Find `yield call` in `doRequestProducts` function.
+  2. Change localhost with the `summerschool.items` public ip.
+5. For `summerschool.cart`:
+  1. Find `yield call` in `doRequestCart `function.
+  2. Change localhost with the `summerschool.cart` public ip.
+6. Save the file.
+7. Verify running `npm run build`.
+
 ## Tasks
 
 ### 1. Modify Items API
