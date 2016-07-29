@@ -52,11 +52,12 @@ const Header = ( {cartAppState, userAppState} ) => {
                 <h3>
                   <div className="total">
                     <span className="simpleCart_total">
-                        ${cartAppState.get("cart") && cartAppState.get("cart").size > 0 ? cartAppState.get("cart").map((value, index) =>
+                      ${cartAppState.get("cart") && cartAppState.get("cart").size > 0 ?     
+                        cartAppState.get("cart").map((value, index) =>
                           value.get("price")
                         ).toJS().reduce(function(previousValue, currentValue) {
                           return previousValue + currentValue;
-                        }):0
+                        }).toFixed(2):0
                       }
                     </span> 
                   </div>

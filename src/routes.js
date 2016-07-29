@@ -3,7 +3,6 @@ import { Route, IndexRoute } from 'react-router';
 import MainStore from './containers/MainStore';
 import Checkout from './components/Checkout';
 
-//<Route path="*" component={NoMatch}/>
 export default (
   <Route
     path="/"
@@ -19,6 +18,6 @@ export default (
     <Route
       path="/men" />
     <Route
-      path="/fetures" />
+      path="/feature" />
   </Route>
-); // fix typo in path for features
+);
