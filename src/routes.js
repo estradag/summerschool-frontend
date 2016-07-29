@@ -3,7 +3,6 @@ import { Route, IndexRoute } from 'react-router';
 import MainStore from './containers/MainStore';
 import Checkout from './components/Checkout';
 
-//<Route path="*" component={NoMatch}/>
 export default (
   <Route
     path="/"
@@ -18,5 +17,7 @@ export default (
       path="/women" />
     <Route
       path="/men" />
+    <Route
+      path="/feature" />
   </Route>
 );

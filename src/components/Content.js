@@ -15,7 +15,7 @@ const Content = ( {productsAppState, cartAppState, userAppState, orderAppState, 
   
   const handleProductItemClick = (e) => {
     setCartItem(fromJS({
-      cart_items: cartAppState.get("cart")? cartAppState.get("cart") : [],
+      cart_items: cartAppState.get("cart") ? cartAppState.get("cart") : [],
       cart_item: productsAppState.get("products").filter(value => 
         value.get('id') == parseInt(e.target.id)
       ).map((value, index) =>
@@ -28,7 +28,8 @@ const Content = ( {productsAppState, cartAppState, userAppState, orderAppState, 
     (filter!=="")?
       (productsAppState.get("products")) ?
         productsAppState.get("products").filter(value => 
-          value.get("category") === filter
+          (filter === "Feature") ? 
+            value.get("feature") : value.get("category") === filter
         ).map((value, index) => 
           <ProductItem
             category={value.get("category")}

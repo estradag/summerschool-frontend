@@ -9,7 +9,7 @@
 ├── .npmrc                    # Configures npm to save exact by default
 ├── README.md                 # This file.
 ├── dist                      # Folder where the build script places the built app. Use this in prod.
-├── docs                      # Documentation
+├── docs                      # Exercise Documentation.
 ├── package.json              # Package configuration. The list of 3rd party libraries and utilities
 ├── src                       # Source code
 │   ├── actions               # Redux actions. List of distinct actions that can occur in the app.
@@ -36,7 +36,13 @@
 
 We need to implement a new feature, the singer Katy Perry will promote some of our products. The Product Owner ask us to implement this new feature, he said that "Clients needs to identify which products are promoted by Katy Perry".
 
-So, time to rocks.
+So, time to rock!.
+
+## Requirements
+
+1. [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+2. [Google Chrome](https://www.google.com/chrome/)
+3. [Atom Editor](https://atom.io/)
 
 ## Instructions
 
@@ -48,19 +54,24 @@ We need to implement the following ranked User Stories.
 
 ## First al all - configure the ip of your APIs
 
-1. In `summerschool-items-api` repository.
+1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/middleware` and open `sagas.js` in Atom editor.
 3. For `summerschool.users`:
   1. Find `yield call` in `doRequestUser` function.
-  2. Change localhost with the `summerschool.users` public ip.
+  2. Change `localhost` with the `summerschool.users public ip`.
 4. For `summerschool.items`:
   1. Find `yield call` in `doRequestProducts` function.
-  2. Change localhost with the `summerschool.items` public ip.
+  2. Change `localhost` with the `summerschool.items public ip`.
 5. For `summerschool.cart`:
   1. Find `yield call` in `doRequestCart `function.
-  2. Change localhost with the `summerschool.cart` public ip.
+  2. Change `localhost` with the `summerschool.cart public ip`.
 6. Save the file.
-7. Verify running `npm run build`.
+7. Verify that all test pass running `npm run test`.
+8. Use Postman to check the following endpoints. Remember set the header with key: `authorization` value: `Bearer qphYSqjEFk1RcFxYqqIIFk4vaBJvDoBr3t9aHTp1JFEAO0NS7ECyLJJyUPybOUNf`
+  1. http://SERVICE-PUBLIC-IP-ADDRESS:3100/api/v1/products
+  2. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/cart/1 
+  3. http://SERVICE-PUBLIC-IP-ADDRESS/api/v1/users/1
+9. Run `npm run build`.
 
 ## Tasks
 
@@ -69,32 +80,58 @@ We need to implement the following ranked User Stories.
 Files route:
 
 1. In `summerschool-items-api` repository.
-2. Navigate to the folder /api and open products.apib in Atom editor.
+2. Navigate to the folder /api and open `products.apib` in Atom editor.
+3. Find the Body response.
+4. Add `feature: true` for products with `id` 1, 4, 7 and `feature: false` for the rest. 
 
-Add `feature true` for each product with `id 1, 4, 7` and false for the rest.
+example:
+
+```
+  "id": 1,
+  "title": "Luna Flower",
+  "description": "Collared Neck Stylish",
+  "price": 60.92,
+  "category": "Women",
+  "feature": true,
+  "image": "pc.jpg"
+```
+
+5. Save the file and start the service running `npm run api-server`.
+6. Use Postman to verify `HOST/api/v1/products` endpoint.
 
 Clues:
 
-1. Check [APIBluePrint](https://apiblueprint.org/documentation/specification.html) specification.
-1. Modify the proper repository.
-2. Restart the service after do any change.
-2. Remember verify the response making a call to this endpoint.
+1. Use spaces for indentation.
+2. More info [APIBluePrint](https://apiblueprint.org/documentation/specification.html) specification.
 
 ### 2. Modify Cart API
 
 Files route:
 
 1. In `summerschool-cart-api` repository.
-2. Navigate to the folder `/api` and open `cart.apib` in Atom editor.
+2. Navigate to the folder /api and open `cart.apib` in Atom editor.
+3. Find the Body response.
+4. Add `feature: true` for products with `id` 2 and `feature: false` for the rest. 
 
-Add `feature true` for each product with `id 2` and false for the rest.
+example:
+
+```
+  "id": 2,
+  "title": "Dearlovers",
+  "description": "Chiffon Blouse U Neck",
+  "price": 89.99,
+  "category": "Women",
+  "feature": false,
+  "image": "pc1.jpg"
+```
+
+5. Save the file and start the service running `npm run api-server`.
+6. Use Postman to verify `HOST/api/v1/cart/1` endpoint.
 
 Clues:
 
-1. Check [APIBluePrint](https://apiblueprint.org/documentation/specification.html) specification.
-1. Modify the proper repository.
-2. Restart the service after do any change.
-2. Remember verify the response making a call to this endpoint.
+1. Use spaces for indentation.
+2. More info [APIBluePrint](https://apiblueprint.org/documentation/specification.html) specification.
 
 ### 3. Add feature image to Products.
 
@@ -102,49 +139,92 @@ Files route:
 
 1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/src/components` and open `ProductItem.js` in Atom editor.
+3. Find `ProductItem` and create a const `PrintFeatureItem`.
+4. Add `span` and `img` tags to `PrintFeatureItem` const.
+  1. `span` tag with `className` equals to `feature-product`
+  2. Nest `img` to `span` with `src` equal to `{require("../images/featured_product.png")}`
 
-Add the feature image to Products in main page.
+Const definition:
+
+```
+const Variable =
+      <span>
+        <img src="image-path" alt="alt-title"/>
+      </span> : "";
+```
+  
+5. Validate that show feature image only for products that have `feature` equal to `true`.
+
+If condition assignment:
+
+```
+const Variable =
+  (condition)?
+    <p>True Condition</p> : <p>False Condition</p>;
+```
+
+6. Render `PrintFeatureItem` const after the div `tag` with `className="mid-pop"` 
+
+How to Render a value:
+
+```
+  {CONST_NAME}
+```
+
+7. Verify the correct render of the change.
+8. Save the file.
 
 Clues:
 
-1. Check [Span Tag](http://www.w3schools.com/tags/tag_span.asp) specification.
-2. Check [Img Tag](http://www.w3schools.com/tags/tag_img.asp) specification.
-3. Check [Nesting Tags](http://www.bu.edu/tech/services/comm/websites/www/non-wordpress/start/html-introduction/syntax/nesting-tags/) post.
-4. Save the tags in a const and print it in the return.
-4. Remember validate that show feature image only for products that have feature true.
-5. Add propType for feature prop.
-6. Verify the correct render of the change.
+1. [Span Tag](http://www.w3schools.com/tags/tag_span.asp) specification.
+2. [Img Tag](http://www.w3schools.com/tags/tag_img.asp) specification.
+3. [Nesting Tags](http://www.bu.edu/tech/services/comm/websites/www/non-wordpress/start/html-introduction/syntax/nesting-tags/) post.
 
-### 4. Add feature product styles.
+### 4. Add feature prop to Products.
+
+Files route:
+
+1. In `summerschool-frontend` repository.
+2. Navigate to the folder `/src/components` and open `Content.js` component in Atom editor.
+3. Find `<ProductItem` component.
+4. Add `feature` prop equal to `{value.get("feature")}`.
+
+How to add a prop to a child Component:
+
+```
+  key={index}
+  feature={value.get("feature")}
+  price={value.get("price")}
+```
+
+5. Save the file.
+9. Run `npm run build` and see the result in Chrome web browser.
+
+Clues:
+
+1. Check [Transfering Props](https://facebook.github.io/react/docs/transferring-props.html#consuming-and-transferring-the-same-prop)
+2. Check [Get function](https://facebook.github.io/immutable-js/docs/#/Map/get)
+3. See how get other properties like price.
+
+### 5. Add feature product styles.
 
 Files route:
 
 1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/src/styles` and open `styles.scss` in Atom editor.
-
-Add styles for feature product image, the image needs to appear over product image.
+3. Find `.mid-pop` class.
+4. Nest `.feature-product` class with:
+  1. `position: absolute;`
+  2. `top: ??;` use the value obtained from Chrome Developer Tools.
+  3. `right: ??;` use the value obtained from Chrome Developer Tools.
+5. Save the file.
+9. Run `npm run build` and see the result in Chrome web browser.
 
 Clues:
 
 1. Check [Sass 3](http://sass-lang.com/documentation/file.INDENTED_SYNTAX.html) syntax.
 2. Check [CSS Position](http://www.w3schools.com/cssref/pr_class_position.asp) property.
-3. Nest feature image class to mid-pop.
-4. Use position absolute property.
-5. Use top and right properties.
-6. Verify the styles in the browser with [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/iterate/inspect-styles/shortcuts?hl=en).
-
-### 5. Add feature path.
-
-Files route:
-
-1. In `summerschool-frontend` repository.
-2. Navigate to the folder `/src` and open `routes.js` component in Atom editor.
-
-Add feature path.
-
-Clues:
-
-1. Check [Link Routes](https://github.com/reactjs/react-router/blob/master/docs/guides/IndexRoutes.md) documentation.
+6. How to see [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/iterate/inspect-styles/shortcuts?hl=en).
 
 ### 6. Add feature menu.
 
@@ -152,66 +232,28 @@ Files route:
 
 1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/src/components` and open `Header.js` component in Atom editor.
-
-Add feature menu link.
+3. Find `ul` tag with `className="nav navbar-nav nav_1"`
+4. Add a new `li` tag nesting `<Link className="color" to={'/feature'}>Feature</Link>`
 
 Clues:
 
 1. Check [Link Component](https://github.com/reactjs/react-router/blob/master/docs/API.md#link).
 
-### 7. Add validation for pathname /feature.
-
-Files route:
-
-1. In `summerschool-frontend` repository.
-2. Navigate to the folder `/src/components` and open `MainStore.js` in Atom editor.
-
-Add `/feature` validation for the new route in `MainStore.js` container.
-
-Clues:
-
-1. Nest a new condition.
-
-### 8. Change filter when filter is equals to Feature.
-
-Files route:
-
-1. In `summerschool-frontend` repository.
-2. Navigate to the folder `/src/components` and open `Content.js` component in Atom editor.
-
-Clues:
-
-1. Check [Filter function](https://facebook.github.io/immutable-js/docs/#/List/filter)
-2. Value store product properties.
-3. Use feature filter only if filter is equals to Filter.
-
-### 9. Add feature prop to Products.
-
-Files route:
-
-1. In `summerschool-frontend` repository.
-2. Navigate to the folder `/src/components` and open `Content.js` component in Atom editor.
-
-Add `feature` prop in products map.
-
-1. Check [Transfering Props](https://facebook.github.io/react/docs/transferring-props.html#consuming-and-transferring-the-same-prop)
-2. Check [Get function](https://facebook.github.io/immutable-js/docs/#/Map/get)
-3. See how get other properties like price.
-
-### 10. Update Cart tests.
+### 7. Update Cart tests.
 
 Files route:
 
 1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/src/test` and open `cart.spec.js` in Atom editor.
-
-Modify the actual test to implement feature property support.
+3. In `handles SET_CART`, `handles SET_CART_ITEM when no exist CART_ITEMS`, `handles SET_CART_ITEM when exist CART_ITEMS` and `handles DELETE_CART_ITEM test`.
+4. Note: Modify in `action` and `expect`.
+4. Add `"feature": true` for products with `id` 1, 4, 7 and `"feature": false` for the rest.
+5. Save the file.
+6. Verify that test pass running `npm run test`.
 
 Clues:
 
 1. Check [Expect equal](http://chaijs.com/api/bdd/#method_equal).
-3. Add feature property to action and expect.
-4. Verify that test pass with `npm run test`.
 
 ### 11. Update Order tests.
 
@@ -219,24 +261,28 @@ Files route:
 
 1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/src/test` and open `order.spec.js` in Atom editor.
-
-Modify the actual test to implement feature property support.
+3. In `handles SET_ORDER`.
+4. Note: Modify in `action` and `expect`.
+4. Add `"feature": true` for products with `id` 1, 4, 7 and `"feature": false` for the rest.
+5. Save the file.
+6. Verify that test pass running `npm run test`.
 
 Clues:
 
 1. Check [Expect equal](http://chaijs.com/api/bdd/#method_equal).
-3. Add feature property to action and expect.
-4. Verify that test pass with `npm run test`.
 
 ### 12.Update Products tests.
 
+Files route:
+
 1. In `summerschool-frontend` repository.
 2. Navigate to the folder `/src/test` and open `products.spec.js` in Atom editor.
-
-Modify the actual test to implement feature property support.
+3. In `handles SET_PRODUCTS`.
+4. Note: Modify in `action` and `expect`.
+4. Add `"feature": true` for products with `id` 1, 4, 7 and `"feature": false` for the rest.
+5. Save the file.
+6. Verify that test pass running `npm run test`.
 
 Clues:
 
 1. Check [Expect equal](http://chaijs.com/api/bdd/#method_equal).
-3. Add feature property to action and expect.
-4. Verify that test pass with `npm run test`.

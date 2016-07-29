@@ -50,11 +50,14 @@ const Header = ( {cartAppState, userAppState} ) => {
               <Link to={'/checkout'}>Checkout
                 <h3>
                   <div className="total">
-                    <span className="simpleCart_total">${cartAppState.get("cart") && cartAppState.get("cart").size > 0 ? cartAppState.get("cart").map((value, index) =>
-                      value.get("price")
-                    ).toJS().reduce(function(previousValue, currentValue) {
-                      return previousValue + currentValue;
-                    }).toFixed(2):0}</span>
+                    <span className="simpleCart_total">
+                      ${cartAppState.get("cart") && cartAppState.get("cart").size > 0 ?    
+                        cartAppState.get("cart").map((value, index) =>
+                          value.get("price")
+                        ).toJS().reduce(function(previousValue, currentValue) {
+                          return previousValue + currentValue;
+                        }).toFixed(2):0}
+                    </span>
                   </div>
                   <img src={require("../images/cart.png")} alt=""/>
                 </h3>

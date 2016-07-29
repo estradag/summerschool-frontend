@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-const ProductItem = ( {handleClick, identifier, title, category, description, price, image} ) => {
+const ProductItem = ( {handleClick, identifier, title, category, description, price, image, feature} ) => {
   return (
       <div key={identifier} className="col-md-3 item-grid simpleCart_shelfItem">
         <div className="mid-pop">
@@ -41,7 +41,8 @@ ProductItem.propTypes = {
   category: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  feature: PropTypes.bool.isRequired,
 };
 
 export default ProductItem;
