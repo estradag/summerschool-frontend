@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 
 const ProductItem = ( {handleClick, identifier, title, category, description, price, image, feature}  ) => {
   const PrintFeatureItem =
-    (feature)?
+    (feature) ?
       <span className="feature-product">
         <img src={require("../images/featured_product.png")} alt={'feature '+title}/>
       </span> : "";
@@ -46,9 +46,9 @@ ProductItem.propTypes = {
   title: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  feature: PropTypes.bool.isRequired,
   price: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  feature: PropTypes.bool.isRequired
 };
 
 export default ProductItem;
