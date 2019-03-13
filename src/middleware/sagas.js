@@ -8,13 +8,13 @@ import * as types from '../constants/ActionTypes';
 export function doRequest(url, options){
   return fetch(url, options)
     .then(function(response) {
-      if (response.status >= 200 && response.status < 300) {  
+      if (response.status >= 200 && response.status < 300) {
         return Promise.resolve(response.json());
-      } else {  
+      } else {
         return Promise.reject(new Error(response.statusText));
-      } 
+      }
     })
-    .catch(error => error);  
+    .catch(error => error);
 }
 
 export function* getProducts() {
@@ -29,6 +29,7 @@ export function* getCart() {
 
 export function* getUser() {
 	const User = yield call(doRequestUser);
+  console.log(actions.receiveUser(fromJS(User)));
 	yield put(actions.receiveUser(fromJS(User)));
 }
 
@@ -58,7 +59,7 @@ export function* doRequestCart() {
 
 export function* doRequestUser() {
   return yield call(
-    doRequest, 'http://localhost:3100/api/v1/users/1',
+    doRequest, 'http://192.168.1.70:3100/api/v1/users/1',
     {
       method: 'GET',
       headers: {
@@ -70,8 +71,8 @@ export function* doRequestUser() {
 
 export default function* root() {
   yield[
-		takeLatest(types.REQUEST_PRODUCTS, getProducts),
-		takeLatest(types.REQUEST_CART, getCart),
+		// takeLatest(types.REQUEST_PRODUCTS, getProducts),
+		// takeLatest(types.REQUEST_CART, getCart),
 		takeLatest(types.REQUEST_USER, getUser)
 	];
 }
