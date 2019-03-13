@@ -3,6 +3,9 @@ node_js:
   - "6"
   - "5"
   - "4"
+script:
+  - echo "This is a test echoed message"
+
 after_success:
   # Send coverage data to coveralls.
   - npm run test:cover:travis
